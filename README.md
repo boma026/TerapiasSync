@@ -1,6 +1,6 @@
-# MassoSync 💆‍♀️📱
+# TerapiasSync 💆‍♀️📱
 
-**MassoSync** é um aplicativo móvel voltado para terapeutas autônomos registrarem seus atendimentos. O aplicativo centraliza os dados dos clientes e os tratamentos realizados de forma rápida, funcionando totalmente **offline** durante os atendimentos.
+**TerapiasSync** é um aplicativo móvel voltado para terapeutas autônomos registrarem seus atendimentos. O aplicativo centraliza os dados dos clientes e os tratamentos realizados de forma rápida, funcionando totalmente **offline** durante os atendimentos.
 
 Este projeto é desenvolvido com **Kotlin Multiplatform (KMP)** e **Compose Multiplatform**, compartilhando 100% da interface e da lógica de negócios entre as plataformas alvo.
 
