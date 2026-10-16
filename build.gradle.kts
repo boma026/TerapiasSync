@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.composeCompiler) apply false
     alias(libs.plugins.kotlinJvm) apply false
     alias(libs.plugins.kotlinMultiplatform) apply false
+    alias(libs.plugins.kotlinSerialization) apply false
     id("org.jlleitschuh.gradle.ktlint") version "11.6.1"
     id("io.gitlab.arturbosch.detekt") version "1.23.3"
 }
@@ -27,7 +28,19 @@ allprojects {
     plugins.withId("org.jlleitschuh.gradle.ktlint") {
         configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
             filter {
-                exclude { entry -> entry.file.path.contains("/build/generated/") }
+                exclude { element ->
+                    val path = element.file.path.replace('\\', '/')
+                    path.contains("/build/") || path.contains("/generated/") || path.contains("resourceGenerator")
+                }
+            }
+        }
+    }
+
+    tasks.withType<SourceTask>().configureEach {
+        if (name.contains("ktlint", ignoreCase = true)) {
+            exclude { element ->
+                val path = element.file.path.replace('\\', '/')
+                path.contains("/build/") || path.contains("/generated/") || path.contains("resourceGenerator")
             }
         }
     }
