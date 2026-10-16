@@ -1,0 +1,35 @@
+root = true
+
+[*.{kt,kts}]
+indent_size = 4
+max_line_length = 120
+
+[**/build/**]
+ktlint = disabled
+ktlint_disabled = true
+ktlint_standard = disabled
+
+[**/build/**/*]
+ktlint = disabled
+ktlint_disabled = true
+ktlint_standard = disabled
+
+[**/build/**/*.kt]
+ktlint = disabled
+ktlint_disabled = true
+ktlint_standard = disabled
+
+[**/generated/**]
+ktlint = disabled
+ktlint_disabled = true
+ktlint_standard = disabled
+
+[**/generated/**/*]
+ktlint = disabled
+ktlint_disabled = true
+ktlint_standard = disabled
+
+[**/generated/**/*.kt]
+ktlint = disabled
+ktlint_disabled = true
+ktlint_standard = disabled
