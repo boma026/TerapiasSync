@@ -214,6 +214,7 @@ private fun LayoutLargo(
                             },
                             onVoltar = null
                         )
+                    } else {
                         EmptyStateView(
                             titulo = "Nenhum cliente selecionado",
                             mensagem = "Selecione um cliente na lista lateral para " +
